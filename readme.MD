@@ -7,3 +7,4 @@
 6. Выбранные элементы поместить в новый массив
 7. Вывести новый массив на экран
 ![Image alt](https://github.com/Odarochka1802/Control/blob/main/image.png)
+
