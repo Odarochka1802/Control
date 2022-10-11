@@ -1,4 +1,4 @@
-﻿int MAX_WORD_LENGTH = 3;
+int MAX_WORD_LENGTH = 3;
 string[] array1 = { "Hello", "2", "world", ":-)" };
 string[] array2 = { "1234", "1567", "-2", "computer science" };
 string[] array3 = { "Russia", "Denmark", "Kazan" };
@@ -26,12 +26,17 @@ void PrintArray(string[] array)
 {
     if (array.Length == 0) // Проверяем на пустоту массив
     {
-        Console.WriteLine("Массив пустой");
+        Console.WriteLine("[]");
     }
     else
     {
-        Array.ForEach(array, (str) => Console.Write($"{str} "));
-        Console.WriteLine();
+        Console.Write("[");
+        for (int i = 0; i < array.Length - 1; i++)
+        {
+            Console.Write($"\"{array[i]}\", ");
+        }
+        Console.Write($"\"{array[array.Length - 1]}\"");
+        Console.WriteLine("]");
     }
 }
 
@@ -40,7 +45,7 @@ void PrintTask(string[] array)
     Console.WriteLine("Исходный массив:");
     PrintArray(array);
     string[] shortArray = GetShortWordsArray(array);
-    Console.WriteLine($"Массив результирующий (строка меньше или равна {MAX_WORD_LENGTH} символам) либо пустой массив:");
+    Console.WriteLine($"Массив результирующий (строка меньше или равна {MAX_WORD_LENGTH} символам):");
     PrintArray(shortArray);
     Console.WriteLine();
 }
